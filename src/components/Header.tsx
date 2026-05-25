@@ -147,16 +147,7 @@ export const Header: React.FC<{ onShowDemo?: () => void }> = ({ onShowDemo }) =>
                   </button>
                 </SheetClose>
               ))}
-              {onShowDemo && (
-                <SheetClose asChild>
-                  <button
-                    onClick={onShowDemo}
-                    className="w-full text-left font-sans font-black text-2xl py-6 px-8 border-b border-foreground bg-primary/10 text-primary hover:bg-primary hover:text-background transition-colors uppercase cursor-pointer"
-                  >
-                    Flow Art Demo
-                  </button>
-                </SheetClose>
-              )}
+
             </nav>
 
             {/* Extra architectural grid elements inside sidebar drawer */}

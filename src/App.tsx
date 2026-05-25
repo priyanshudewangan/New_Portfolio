@@ -62,11 +62,11 @@ function App() {
         </div>
 
         {/* Hero Image layered behind slogan but in front of background title */}
-        <div className="absolute right-0 bottom-0 w-[95%] sm:w-[75%] md:w-[60%] lg:w-[50%] max-h-[90%] z-10 pointer-events-none flex items-end justify-end">
+        <div className="absolute right-0 bottom-0 w-[60%] sm:w-[70%] md:w-[60%] lg:w-[50%] max-h-[90%] z-10 pointer-events-none flex items-end justify-end">
           <img
             src={heroPortrait}
             alt="Priyanshu Dewangan Portrait"
-            className="object-contain max-h-[65vh] md:max-h-[82vh] lg:max-h-[88vh] select-none"
+            className="object-contain max-h-[55vh] md:max-h-[82vh] lg:max-h-[88vh] select-none"
           />
         </div>
 
@@ -74,25 +74,24 @@ function App() {
         <div className="flex-1 px-6 sm:px-8 md:px-12 py-12 relative w-full z-20">
 
           {/* Vertical Navigation Links - Moved back to the left as indicated by the arrow */}
-          <div className="absolute left-6 sm:left-8 md:left-25 top-[70%] select-none">
+          <div className="absolute left-6 sm:left-8 md:left-25 top-[35%] md:top-[70%] select-none">
             <nav className="flex flex-col gap-2 font-sans font-black text-base sm:text-lg md:text-xxl tracking-wider uppercase">
               <a href="#home" className="underline decoration-2 underline-offset-4 decoration-foreground w-fit">HOME</a>
               <a href="#about" className="text-foreground/45 hover:text-foreground transition-colors w-fit">ABOUT</a>
               <a href="#projects" className="text-foreground/45 hover:text-foreground transition-colors w-fit">PROJECTS</a>
               <a href="mailto:priyanshudewangan2004@gmail.com" className="text-foreground/45 hover:text-foreground transition-colors w-fit">CONTACT</a>
-
             </nav>
           </div>
 
           {/* Slogan Heading - Absolute positioned where the arrow points in the screenshot */}
           <div className="absolute left-6 sm:left-[28%] md:left-[63%] lg:left-[38%] bottom-6 sm:bottom-10 md:bottom-14 lg:bottom-20 select-none">
-            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-primary leading-[0.85] tracking-tighter uppercase font-league">
-              Designing <BrutalistRecordIcon className="inline-block size-10 sm:size-14 md:size-16 lg:size-20 align-middle ml-1" />
+            <h2 className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-primary leading-[0.85] tracking-tighter uppercase font-league">
+              Designing <BrutalistRecordIcon className="inline-block size-8 sm:size-14 md:size-16 lg:size-20 align-middle ml-1" />
               <br />
-              <BrutalistCircleDotIcon className="inline-block size-10 sm:size-14 md:size-16 lg:size-20 align-middle mr-2" />
+              <BrutalistCircleDotIcon className="inline-block size-8 sm:size-14 md:size-16 lg:size-20 align-middle mr-2" />
               Experiences
               <br />
-              That People Love <BrutalistStarIcon className="inline-block size-10 sm:size-14 md:size-16 lg:size-20 align-middle ml-1 animate-spin" style={{ animationDuration: '20s' }} />
+              That People Love <BrutalistStarIcon className="inline-block size-8 sm:size-14 md:size-16 lg:size-20 align-middle ml-1 animate-spin" style={{ animationDuration: '20s' }} />
             </h2>
           </div>
         </div>
@@ -105,6 +104,7 @@ function App() {
 
       {/* Interactive Footer Scroll Section */}
       <Skiper31 />
+
 
       {/* Footer */}
       <footer className="w-full border-t-4 border-foreground bg-foreground text-background p-12 text-center uppercase font-black tracking-widest shrink-0">

@@ -6,7 +6,7 @@ export const SocialMedia: React.FC = () => {
     { name: "GitHub", url: "https://github.com/priyanshudewangan" },
     { name: "LinkedIn", url: "https://linkedin.com" },
     { name: "Email", url: "mailto:priyanshudewangan2004@gmail.com" },
-    { name: "Discord", url: "https://discord.com" },
+    { name: "Portfolio", url: "https://portfoliopriyanshu2.vercel.app" },
   ];
 
   return (

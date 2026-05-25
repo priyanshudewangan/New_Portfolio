@@ -21,18 +21,23 @@ export const About: React.FC = () => {
       }}
     >
       {/* Container holding the grid */}
-      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-12 sm:gap-20 h-full my-auto z-10">
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-12 sm:gap-20 h-full my-auto z-10">
 
-        {/* Left Column: Vertical Text "ABOUT ME" facing right */}
-        <div className="relative w-[30vw] md:w-[22vw] lg:w-[18vw] h-[55vw] md:h-[42vw] lg:h-[35vw] flex items-center justify-center select-none shrink-0">
-          <div className="absolute flex flex-col items-start rotate-[-90deg] font-sans font-black text-[15vw] md:text-[11vw] lg:text-[12vw] leading-none text-[#e2e0db] uppercase tracking-tighter whitespace-nowrap gap-4 sm:gap-6 md:gap-8">
+        {/* Left Column: Vertical Text "ABOUT ME" facing right - Desktop Only */}
+        <div className="hidden md:flex relative w-[22vw] lg:w-[18vw] h-[42vw] lg:h-[35vw] items-center justify-center select-none shrink-0">
+          <div className="absolute flex flex-col items-start rotate-[-90deg] font-sans font-black text-[11vw] lg:text-[12vw] leading-none text-[#e2e0db] uppercase tracking-tighter whitespace-nowrap gap-4 sm:gap-6 md:gap-8">
             <span>ABOUT</span>
             <span className="translate-x-[65%]">ME</span>
           </div>
         </div>
 
+        {/* Mobile Header: Horizontal Text - Mobile Only */}
+        <div className="md:hidden w-full select-none font-sans font-black text-6xl leading-none text-[#e2e0db] uppercase tracking-tighter mb-2">
+          <span>ABOUT ME</span>
+        </div>
+
         {/* Right Column: Image, Paragraphs, and Name */}
-        <div className="flex-1 flex flex-col items-end gap-8 sm:gap-10 max-w-xl w-full">
+        <div className="flex-1 flex flex-col items-start md:items-end gap-8 sm:gap-10 max-w-xl w-full">
           {/* Display Picture */}
           <div className="w-36 sm:w-40 md:w-44 aspect-[132/193] overflow-hidden border border-white/10 shadow-xl transition-all duration-500 hover:scale-[1.02]">
             <img
@@ -43,10 +48,10 @@ export const About: React.FC = () => {
           </div>
 
           {/* Description Paragraphs replaced with FluidTextMorph component */}
-          <div className="w-full max-w-md flex flex-col items-end gap-2 text-right">
+          <div className="w-full max-w-md flex flex-col items-start md:items-end gap-2 text-left md:text-right">
             <FluidTextMorph
               wordPairs={WORD_PAIRS}
-              className="text-5xl sm:text-7xl font-extrabold tracking-tighter justify-end w-full min-h-[5rem] sm:min-h-[7rem]"
+              className="text-5xl sm:text-7xl font-extrabold tracking-tighter justify-start md:justify-end w-full min-h-[5rem] sm:min-h-[7rem]"
               autoPlay={true}
               autoPlayInterval={2000}
               animationProps={{
@@ -58,7 +63,7 @@ export const About: React.FC = () => {
           </div>
 
           {/* Biography paragraphs */}
-          <div className="space-y-6 text-[#a1a1a5] text-sm sm:text-base font-sans font-normal text-right leading-relaxed max-w-md">
+          <div className="space-y-6 text-[#a1a1a5] text-sm sm:text-base font-sans font-normal text-left md:text-right leading-relaxed max-w-md">
             <p>
               I’m a Frontend Developer and Creative Developer passionate about building immersive and visually engaging digital experiences.
             </p>

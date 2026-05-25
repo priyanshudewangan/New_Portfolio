@@ -88,16 +88,16 @@ const ThankYouCharacter = ({
   const isSpace = char === " ";
   const distanceFromCenter = index - centerIndex;
 
-  const x = useTransform(scrollYProgress, [0.35, 0.65], [distanceFromCenter * 65, 0]);
-  const rotate = useTransform(scrollYProgress, [0.35, 0.65], [distanceFromCenter * 35, 0]);
-  const scale = useTransform(scrollYProgress, [0.35, 0.65], [0.6, 1]);
-  const opacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
+  const x = useTransform(scrollYProgress, [0.75, 0.95], [distanceFromCenter * 65, 0]);
+  const rotate = useTransform(scrollYProgress, [0.75, 0.95], [distanceFromCenter * 35, 0]);
+  const scale = useTransform(scrollYProgress, [0.75, 0.95], [0.6, 1]);
+  const opacity = useTransform(scrollYProgress, [0.75, 0.9], [0, 1]);
 
   return (
     <motion.span
       className={cn(
-        "inline-block text-primary font-black uppercase text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter font-league select-none leading-none",
-        isSpace && "w-6 sm:w-10"
+        "inline-block text-primary font-black uppercase text-[12vw] sm:text-[13vw] md:text-[14vw] lg:text-[15vw] tracking-tighter font-league select-none leading-none",
+        isSpace && "w-[4vw] sm:w-[6vw]"
       )}
       style={{ x, rotate, scale, opacity }}
     >
@@ -107,13 +107,28 @@ const ThankYouCharacter = ({
 };
 
 const Skiper31 = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const targetRef = useRef<HTMLDivElement | null>(null);
   const targetRef2 = useRef<HTMLDivElement | null>(null);
   const targetRef3 = useRef<HTMLDivElement | null>(null);
 
   const { scrollYProgress } = useScroll({ target: targetRef });
   const { scrollYProgress: scrollYProgress2 } = useScroll({ target: targetRef2 });
-  const { scrollYProgress: scrollYProgress3 } = useScroll({ target: targetRef3 });
+  const { scrollYProgress: scrollYProgress3 } = useScroll({
+    target: targetRef3,
+    offset: ["start end", "end end"]
+  });
+
+  const { scrollYProgress: mainScroll } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"]
+  });
+
+  const backgroundColor = useTransform(
+    mainScroll,
+    [0, 0.5, 1],
+    ["#fff7ed", "#ffffff", "#cdc1acff"]
+  );
 
   const text = "see more from ";
   const characters = text.split("");
@@ -123,12 +138,13 @@ const Skiper31 = () => {
   const thankYouCharacters = thankYouText.split("");
   const thankYouCenterIndex = Math.floor(thankYouCharacters.length / 2);
 
+
   // GitHub Repositories
   const repoItems = [
     {
       name: "New Portfolio",
       icon: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/vite.svg",
-      url: "https://github.com/priyanshudewangan/New_Portfolio",
+      url: "https://portfoliopriyanshu2.vercel.app",
       tech: "Vite + React + TS"
     },
     {
@@ -191,7 +207,11 @@ const Skiper31 = () => {
 
   return (
     <ReactLenis root>
-      <main className="w-full bg-[#f5f4f3] border-t-2 border-foreground overflow-hidden">
+      <motion.main
+        ref={containerRef}
+        className="w-full border-t-2 border-foreground overflow-hidden"
+        style={{ backgroundColor }}
+      >
         {/* Helper tip */}
         <div className="absolute left-1/2 z-10 grid -translate-x-1/2 content-start justify-items-center gap-4 text-center text-black pointer-events-none mt-12">
           <span className="relative max-w-[12ch] text-[10px] font-mono uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:mt-2 after:h-12 after:w-px after:bg-gradient-to-b after:from-[#f23e16] after:to-transparent after:content-['']">
@@ -223,7 +243,7 @@ const Skiper31 = () => {
         {/* Block 2 — GitHub Repos */}
         <div
           ref={targetRef2}
-          className="relative -mt-[80vh] box-border flex h-[180vh] flex-col items-center justify-center gap-[4vw] overflow-hidden p-[2vw]"
+          className="relative -mt-[40vh] sm:-mt-[60vh] md:-mt-[80vh] box-border flex h-[120vh] sm:h-[150vh] md:h-[180vh] flex-col items-center justify-center gap-[4vw] overflow-hidden p-[2vw]"
         >
           <p className="flex items-center justify-center gap-3 text-lg sm:text-xl md:text-2xl font-black tracking-tight text-black uppercase font-sans">
             <Bracket className="h-10 text-black" />
@@ -264,7 +284,7 @@ const Skiper31 = () => {
         {/* Block 3 — Socials & Thank You */}
         <div
           ref={targetRef3}
-          className="relative -mt-[75vh] box-border flex h-[200vh] flex-col items-center justify-center gap-[4vw] overflow-hidden p-[2vw]"
+          className="relative -mt-[35vh] sm:-mt-[55vh] md:-mt-[75vh] box-border flex h-[140vh] sm:h-[170vh] md:h-[200vh] flex-col items-center justify-center gap-[4vw] overflow-hidden p-[2vw]"
         >
           <p className="flex items-center justify-center gap-3 text-lg sm:text-xl md:text-2xl font-black tracking-tight text-black uppercase font-sans">
             <Bracket className="h-10 text-black" />
@@ -304,12 +324,12 @@ const Skiper31 = () => {
                 char={char}
                 index={index}
                 centerIndex={thankYouCenterIndex}
-                scrollYProgress={scrollYProgress3}
+                scrollYProgress={mainScroll}
               />
             ))}
           </div>
         </div>
-      </main>
+      </motion.main>
     </ReactLenis>
   );
 };

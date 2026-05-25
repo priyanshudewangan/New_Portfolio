@@ -75,7 +75,7 @@ export const Projects: React.FC = () => {
             {/* Background Big Title with Glow */}
             <div className="absolute inset-0 flex flex-col items-center justify-center select-none z-0 pointer-events-none text-center">
               <h3
-                className="text-[18vw] sm:text-[16vw] font-black leading-[0.8] uppercase tracking-tighter font-league"
+                className="text-[28vw] sm:text-[16vw] font-black leading-[0.8] uppercase tracking-tighter font-league"
                 style={{
                   color: project.textColor,
                   textShadow: `0 0 25px ${project.textColor}55`,
@@ -88,7 +88,7 @@ export const Projects: React.FC = () => {
             </div>
 
             {/* Centered Overlapping Image */}
-            <div className="relative z-10 w-72 sm:w-96 md:w-[28rem] lg:w-[36rem] aspect-[16/9] shadow-[0_20px_50px_rgba(0,0,0,0.35)] overflow-hidden bg-background border border-white/10 transition-transform duration-500 hover:scale-105">
+            <div className="relative z-10 w-60 sm:w-80 md:w-[28rem] lg:w-[36rem] aspect-[16/9] shadow-[0_20px_50px_rgba(0,0,0,0.35)] overflow-hidden bg-background border border-white/10 transition-transform duration-500 hover:scale-105">
               <img
                 src={project.image}
                 alt={`${project.titleLine1} ${project.titleLine2}`}
