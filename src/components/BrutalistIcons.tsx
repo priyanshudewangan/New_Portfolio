@@ -3,48 +3,42 @@ import React from "react";
 // Brutalist Disc Record Icon: A black square containing a vinyl disc pattern
 export const BrutalistRecordIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
-    width="28"
-    height="28"
     viewBox="0 0 28 28"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={`inline-block align-middle mx-1 ${props.className || ""}`}
     {...props}
   >
-    <rect width="28" height="28" fill="black" />
-    <circle cx="14" cy="14" r="10" fill="#c4cfd0" />
-    <circle cx="14" cy="14" r="7" fill="black" />
-    <circle cx="14" cy="14" r="4" fill="#c4cfd0" />
-    <circle cx="14" cy="14" r="1.5" fill="black" />
+    <rect width="28" height="28" className="fill-foreground" />
+    <circle cx="14" cy="14" r="10" className="fill-background" />
+    <circle cx="14" cy="14" r="7" className="fill-foreground" />
+    <circle cx="14" cy="14" r="4" className="fill-background" />
+    <circle cx="14" cy="14" r="1.5" className="fill-foreground" />
   </svg>
 );
 
 // Circle Dot Icon: A black square with a dot inside a circle
 export const BrutalistCircleDotIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
-    width="28"
-    height="28"
     viewBox="0 0 28 28"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={`inline-block align-middle mx-1 ${props.className || ""}`}
     {...props}
   >
-    <rect width="28" height="28" fill="black" />
-    <circle cx="14" cy="14" r="9" fill="white" />
-    <circle cx="14" cy="14" r="4" fill="black" />
+    <rect width="28" height="28" className="fill-foreground" />
+    <circle cx="14" cy="14" r="9" className="fill-background" />
+    <circle cx="14" cy="14" r="4" className="fill-foreground" />
   </svg>
 );
 
 // Sparkle Star Icon: An 8-point brutalist star (asterisk)
 export const BrutalistStarIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
-    width="28"
-    height="28"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
-    className={`inline-block align-middle mx-1 text-black ${props.className || ""}`}
+    className={`inline-block align-middle mx-1 ${props.className || ""}`}
     {...props}
   >
     <path
