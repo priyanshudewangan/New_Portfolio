@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { ChevronLeft } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   BrutalistRecordIcon,
@@ -11,12 +10,9 @@ import { About } from "@/components/sections/About";
 import { SocialMedia } from "@/components/sections/SocialMedia";
 import { Projects } from "@/components/sections/Projects";
 import { Skiper31 } from "@/components/sections/Skiper31";
-import FlowArtDefaultDemo from "@/components/sections/FlowArtDemo";
 import heroPortrait from "@/assets/hero-portrait.png";
 
 function App() {
-  const [showDemo, setShowDemo] = useState(false);
-
   useEffect(() => {
     // Reset scroll position to top
     window.scrollTo(0, 0);
@@ -27,27 +23,12 @@ function App() {
     }, 150);
 
     return () => clearTimeout(timer);
-  }, [showDemo]);
-
-  if (showDemo) {
-    return (
-      <div className="relative w-full min-h-screen overflow-y-auto h-auto">
-        <FlowArtDefaultDemo />
-        <button
-          onClick={() => setShowDemo(false)}
-          className="fixed left-4 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center h-12 w-12 rounded-full bg-black/85 hover:bg-black text-white border-2 border-white/20 transition-all hover:scale-105 active:scale-95 shadow-xl cursor-pointer group"
-          aria-label="Exit Demo"
-        >
-          <ChevronLeft className="size-6 transition-transform group-hover:-translate-x-0.5" />
-        </button>
-      </div>
-    );
-  }
+  }, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground selection:bg-foreground selection:text-background font-sans antialiased">
       {/* Header component */}
-      <Header onShowDemo={() => setShowDemo(true)} />
+      <Header />
 
       {/* Hero Section */}
       <main id="home" className="h-[calc(100vh-64px)] flex flex-col justify-between relative w-full overflow-hidden shrink-0">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet";
 
-export const Header: React.FC<{ onShowDemo?: () => void }> = ({ onShowDemo }) => {
+export const Header: React.FC = () => {
   const navItems = ["HOME", "ABOUT", "PROJECTS", "CONTACT"];
   const [theme, setTheme] = useState<"hero" | "about" | "project-0" | "project-1" | "project-2" | "project-3">("hero");
 
