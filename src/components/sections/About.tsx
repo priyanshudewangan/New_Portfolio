@@ -1,5 +1,5 @@
 import React from "react";
-import portfolioDp from "@/assets/Portfolio_DP.png";
+import portfolioDp from "@/assets/Portfolio_DP.webp";
 import { FluidTextMorph } from "@/components/ui/fluid-text-morph";
 
 const WORD_PAIRS: [string, string][] = [

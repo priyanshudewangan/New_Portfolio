@@ -1,9 +1,9 @@
 import React from "react";
 import FlowArt, { FlowSection } from "@/components/ui/story-scroll";
-import netflixPng from "@/assets/Netlfix.png";
-import MovieRecommender from "@/assets/MovieRecommender.png";
-import ApplyFlow from "@/assets/ApplyFlow.png";
-import Taskmanager from "@/assets/TaskManager.png"
+import netflixPng from "@/assets/Netlfix.webp";
+import MovieRecommender from "@/assets/MovieRecommender.webp";
+import ApplyFlow from "@/assets/ApplyFlow.webp";
+import Taskmanager from "@/assets/TaskManager.webp"
 
 const projects = [
   {
@@ -13,7 +13,8 @@ const projects = [
     description: "A high-fidelity Netflix clone featuring user authentication, dynamic trailer playback, personal watchlists, and movie content populated via TMDB API integration.",
     image: netflixPng,
     bgColor: "#E50914",
-    textColor: "#ffffff"
+    textColor: "#ffffff",
+    liveUrl: "https://netflixclone23-blond.vercel.app"
   },
   {
     titleLine1: "APPLYFLOW",
@@ -22,7 +23,8 @@ const projects = [
     description: "End-to-end internship application automation system reducing manual effort by over 80%.",
     image: ApplyFlow,
     bgColor: "#000000",
-    textColor: "#ffffff"
+    textColor: "#ffffff",
+    githubUrl: "https://github.com/priyanshudewangan/ApplyFlow"
   },
   {
     titleLine1: "FUTUREME",
@@ -31,7 +33,8 @@ const projects = [
     description: "AI-Simulated personal growth orchestrator with dynamic telemetry dashboards and NLP-driven burnout diagnostics.",
     image: Taskmanager,
     bgColor: "#fdf0eb",
-    textColor: "#f23e16"
+    textColor: "#f23e16",
+    githubUrl: "https://github.com/priyanshudewangan/Ahead"
   },
   {
     titleLine1: "CINEMATIC",
@@ -40,7 +43,8 @@ const projects = [
     description: "Intelligent recommendation engine suggesting movies based on title, genre, and user keywords.",
     image: MovieRecommender,
     bgColor: "#1A3DE8",
-    textColor: "#ffffff"
+    textColor: "#ffffff",
+    githubUrl: "https://movie-website-for-recommendation.vercel.app"
   },
 ];
 
@@ -92,6 +96,8 @@ export const Projects: React.FC = () => {
               <img
                 src={project.image}
                 alt={`${project.titleLine1} ${project.titleLine2}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700 ease-out hover:scale-110"
               />
             </div>
@@ -109,9 +115,28 @@ export const Projects: React.FC = () => {
                   {project.description}
                 </p>
               </div>
-              <button className="whitespace-nowrap text-sm font-black uppercase tracking-widest underline decoration-2 underline-offset-4 hover:opacity-80 transition-opacity cursor-pointer text-left self-start md:self-end">
-                View Case Study →
-              </button>
+              <div className="flex gap-4 self-start md:self-end">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="whitespace-nowrap text-sm font-black uppercase tracking-widest underline decoration-2 underline-offset-4 hover:opacity-80 transition-opacity cursor-pointer text-left"
+                  >
+                    View Live Project →
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="whitespace-nowrap text-sm font-black uppercase tracking-widest underline decoration-2 underline-offset-4 hover:opacity-80 transition-opacity cursor-pointer text-left"
+                  >
+                    View Code →
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </FlowSection>

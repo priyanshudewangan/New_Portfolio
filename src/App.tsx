@@ -10,7 +10,9 @@ import { About } from "@/components/sections/About";
 import { SocialMedia } from "@/components/sections/SocialMedia";
 import { Projects } from "@/components/sections/Projects";
 import { Skiper31 } from "@/components/sections/Skiper31";
-import heroPortrait from "@/assets/hero-portrait.png";
+import heroPortrait from "@/assets/hero-portrait.webp";
+
+import { Footer } from "@/components/Footer";
 
 function App() {
   useEffect(() => {
@@ -86,11 +88,8 @@ function App() {
       {/* Interactive Footer Scroll Section */}
       <Skiper31 />
 
-
       {/* Footer */}
-      <footer className="w-full border-t-4 border-foreground bg-foreground text-background p-12 text-center uppercase font-black tracking-widest shrink-0">
-        <p>© 2026 Priyanshu Dewangan. Built with React and Brutalist Intent.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
