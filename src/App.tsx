@@ -40,8 +40,7 @@ function App() {
           {/* Huge Red Background Title - Positioned Absolute so it stays in background */}
           <div className="absolute top-6 left-0 right-0 select-none z-0 pointer-events-none">
             <h1
-              className="text-[29vw] md:text-[25vw] font-black leading-[0.85] tracking-tighter text-primary font-league uppercase text-center w-full block origin-top"
-              style={{ transform: "scaleY(1.4) scaleX(1.53)" }}
+              className="text-[18vw] sm:text-[22vw] md:text-[25vw] font-black leading-[0.85] tracking-tighter text-primary font-league uppercase text-center w-full block origin-top hero-title"
             >
               PRIYANSHU
             </h1>

@@ -135,7 +135,7 @@ export const Footer: React.FC = () => {
       {/* Giant Cropped Typography at the Bottom - Intentionally Over-scaled, Curved and Anchored */}
       <motion.div
         style={{ y: giantY, opacity: giantOpacity }}
-        className="absolute bottom-[-90px] sm:bottom-[-130px] md:bottom-[-180px] lg:bottom-[-220px] left-[-40vw] sm:left-[-30vw] md:left-[-20vw] w-[180vw] sm:w-[160vw] md:w-[140vw] select-none pointer-events-none z-0 flex justify-center overflow-hidden"
+        className="absolute bottom-[-15px] sm:bottom-[-70px] md:bottom-[-130px] lg:bottom-[-180px] left-[-40vw] sm:left-[-30vw] md:left-[-20vw] w-[180vw] sm:w-[160vw] md:w-[140vw] select-none pointer-events-none z-0 flex justify-center overflow-hidden"
       >
         <motion.svg
           viewBox="0 0 1200 400"
