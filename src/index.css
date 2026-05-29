@@ -213,7 +213,7 @@
 }
 
 @utility hero-title {
-  transform: scaleY(2.085) scaleX(1.83);
+  transform: scaleY(2.085) scaleX(1.73);
 }
 
 @media (min-width: 640px) {
@@ -224,6 +224,6 @@
 
 @media (min-width: 768px) {
   .hero-title {
-    transform: scaleY(1.4) scaleX(1.53);
+    transform: scaleY(1.4) scaleX(1.63);
   }
 }
