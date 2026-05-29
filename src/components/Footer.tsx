@@ -13,6 +13,13 @@ export const Footer: React.FC = () => {
   // Giant typography parallax: subtle shift upward on scroll
   const giantY = useTransform(scrollYProgress, [0, 1], [120, 0]);
   const giantOpacity = useTransform(scrollYProgress, [0, 0.7], [0.15, 1]);
+  // Color transition: black at the very bottom, grey as we scroll up
+  const giantColor = useTransform(
+    scrollYProgress,
+    [0.7, 1],
+    ["rgba(0, 0, 0, 0.35)", "rgba(0, 0, 0, 1)"]
+  );
+
 
   return (
     <div
@@ -128,12 +135,16 @@ export const Footer: React.FC = () => {
       {/* Giant Cropped Typography at the Bottom - Intentionally Over-scaled, Curved and Anchored */}
       <motion.div
         style={{ y: giantY, opacity: giantOpacity }}
-        className="absolute bottom-[-18%] sm:bottom-[-20%] md:bottom-[-22%] lg:bottom-[-24%] left-[-20vw] w-[140vw] select-none pointer-events-none z-0 flex justify-center overflow-hidden"
+        className="absolute bottom-[-90px] sm:bottom-[-130px] md:bottom-[-180px] lg:bottom-[-220px] left-[-40vw] sm:left-[-30vw] md:left-[-20vw] w-[180vw] sm:w-[160vw] md:w-[140vw] select-none pointer-events-none z-0 flex justify-center overflow-hidden"
       >
-        <svg
+        <motion.svg
           viewBox="0 0 1200 400"
-          className="w-full text-black fill-current"
-          style={{ transform: "scale(1.08, 0.92)", transformOrigin: "center" }}
+          className="w-full"
+          style={{
+            fill: giantColor,
+            transform: "scale(1.08, 0.92)",
+            transformOrigin: "center"
+          }}
         >
           <defs>
             <path id="curve" d="M 0,260 Q 600,390 1200,260" />
@@ -147,7 +158,7 @@ export const Footer: React.FC = () => {
               Dewangan
             </textPath>
           </text>
-        </svg>
+        </motion.svg>
       </motion.div>
     </div>
   );

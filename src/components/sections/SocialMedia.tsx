@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export const SocialMedia: React.FC = () => {
   const socialLinks = [
     { name: "GitHub", url: "https://github.com/priyanshudewangan" },
-    { name: "LinkedIn", url: "https://linkedin.com" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/priyanshudewangan2303" },
     { name: "Email", url: "mailto:priyanshudewangan2004@gmail.com" },
     { name: "Portfolio", url: "https://portfoliopriyanshu2.vercel.app" },
   ];

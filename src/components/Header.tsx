@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
             const slideRect = slides[i].getBoundingClientRect();
             // If the top of the slide is at or above the header height, and bottom is below it
             if (slideRect.top <= headerHeight && slideRect.bottom > headerHeight) {
-              setTheme(`project-${i}` as any);
+              setTheme(`project-${i}` as typeof theme);
               return;
             }
           }

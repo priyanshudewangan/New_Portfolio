@@ -27,7 +27,6 @@ export function FluidTextMorph({
   autoPlayInterval = 1000,
 }: FluidTextMorphProps) {
   const [index, setIndex] = useState(0);
-  const [word, setWord] = useState(wordPairs[index][0]);
   const [isHovered, setIsHovered] = useState(false);
 
   // Default colors are now CSS variables for theming
@@ -36,12 +35,6 @@ export function FluidTextMorph({
     animateColor = "hsl(var(--foreground))",
     exitColor = "hsl(var(--destructive))",
   } = animationProps;
-
-  useEffect(() => {
-    if (wordPairs && wordPairs.length > 0) {
-      setWord(wordPairs[index][0]);
-    }
-  }, [index, wordPairs]);
 
   useEffect(() => {
     if (!autoPlay || isHovered) return;
@@ -55,19 +48,19 @@ export function FluidTextMorph({
 
   const handleHover = () => {
     setIsHovered(true);
-    setWord(wordPairs[index][1]);
   };
 
   const handleHoverEnd = () => {
     setIsHovered(false);
-    setWord(wordPairs[index][0]);
   };
 
   const handleClick = () => {
     setIndex((prev) => (prev + 1) % wordPairs.length);
   };
 
+  const word = (wordPairs && wordPairs.length > 0) ? wordPairs[index][isHovered ? 1 : 0] : "";
   const letters = word.split("");
+
 
   // 3. --- CLEAN, REUSABLE MARKUP ---
   // The component no longer includes demo-specific wrappers or text.
