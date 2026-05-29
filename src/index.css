@@ -106,9 +106,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground antialiased;
   }
+
   html {
     @apply font-sans scroll-smooth;
   }
@@ -118,33 +120,43 @@
   0% {
     transform: translate(0, 0);
   }
+
   10% {
     transform: translate(-2%, -3%);
   }
+
   20% {
     transform: translate(-4%, 2%);
   }
+
   30% {
     transform: translate(2%, -4%);
   }
+
   40% {
     transform: translate(-2%, 5%);
   }
+
   50% {
     transform: translate(-4%, 2%);
   }
+
   60% {
     transform: translate(3%, 0);
   }
+
   70% {
     transform: translate(0, 3%);
   }
+
   80% {
     transform: translate(-3%, 0);
   }
+
   90% {
     transform: translate(2%, 2%);
   }
+
   100% {
     transform: translate(1%, 0);
   }
@@ -158,19 +170,23 @@
   0% {
     transform: translate(-55%);
   }
+
   100% {
     transform: translate(55%);
   }
 }
 
 @keyframes opacityAnim {
+
   0%,
   100% {
     opacity: 0;
   }
+
   15% {
     opacity: 1;
   }
+
   65% {
     opacity: 0;
   }
@@ -180,21 +196,24 @@
   0% {
     opacity: 0;
   }
+
   5% {
     opacity: 1;
     text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
     transform: scale(1.1) translateY(-2px);
   }
+
   20% {
     opacity: 0.2;
   }
+
   100% {
     opacity: 0;
   }
 }
 
 @utility hero-title {
-  transform: scaleY(1.35) scaleX(1.3);
+  transform: scaleY(2.085) scaleX(1.83);
 }
 
 @media (min-width: 640px) {
